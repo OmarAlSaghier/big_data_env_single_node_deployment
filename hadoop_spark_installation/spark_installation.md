@@ -1,3 +1,11 @@
+# SPARK Installation on MacOS using homebrew
+* You can follow this page: `https://formulae.brew.sh/formula/apache-spark`, for the following command:
+```
+$ brew install apache-spark
+```
+
+
+****
 # SPARK Installation on Ubuntu
 
 

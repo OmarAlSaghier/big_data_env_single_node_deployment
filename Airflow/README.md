@@ -20,8 +20,7 @@ https://github.com/apache/airflow
 Install airflow using the below command
 make sure to change the **"`constraints-3.xx`"** to your python version
 ```
-$ pip install 'apache-airflow==2.5.0' \
- --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.10.txt"
+$ pip install "apache-airflow[celery]==2.6.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.6.0/constraints-3.10.txt"
  ```
 
 * After installation, export `AIRFLOW_HOME` to the desired directory
@@ -37,6 +36,11 @@ $ airflow db init
 * Check db connection using:
 ```
 $ airflow db check
+```
+
+* Change `load_examples` in the **`airflow.cfg`** file to "False" if you don't want to load the initial examples:
+```
+load_examples = False
 ```
 
 * Start Airflow webserver:
