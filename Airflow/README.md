@@ -82,8 +82,22 @@ with DAG(dag_id="simple_dag", start_date=datetime(2023, 2, 1), schedule="0 0 * *
 ```
 
 ****
+### **Enabeling REST APIs connection:**
+In order to make Airflow accept REST APIs connections, you need to change the value of "`auth_backends`" in the "`airflow.cfg`" to the below value:
 
-### To Rerun Airflow Again After the First Setup
+```
+auth_backends = airflow.api.auth.backend.basic_auth
+```
+**You need to reload airflow webserver and airflow scheduler accordingly**
+
+* In order to check if the value in changed, use the below command:
+```
+$ airflow config get-value api auth_backends
+```
+
+****
+
+### **To Rerun Airflow Again After the First Setup**
 * Terminal window 1:
 ```
 $ export AIRFLOW_HOME=$(pwd)/airflow_venv
