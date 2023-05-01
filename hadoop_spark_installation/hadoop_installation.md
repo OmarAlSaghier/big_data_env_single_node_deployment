@@ -129,7 +129,7 @@ $ jps
 
 * Validate HDFS and create user using:
 ```
-$ hdfs dfs -mkdir -p /user/zaka
+$ hdfs dfs -mkdir -p /user/<your-prefrred-username>
 $ hdfs dfs -ls /user/
 ```
 
