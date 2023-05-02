@@ -1,3 +1,4 @@
+import os
 import airflow
 from airflow import DAG
 from airflow.utils.dates import days_ago
@@ -7,11 +8,12 @@ dag_spark_submit = DAG(
     dag_id='spark_submit_dag',
     default_args={"retries": 2},
     schedule_interval='0 0 * * *',
-    start_date=days_ago(1),
+    start_date=days_ago(0),
     description='executing spark submit command'
 )
 
-SPARK_SUBMIT_FILE = "/Users/oalsaghier/Documents/Training/Big_data_tools/hadoop_spark_installation/spark_code_test.py"
+WORKING_DIR = str(os.getcwd())
+SPARK_SUBMIT_FILE = f"{WORKING_DIR.split('/Training')[0]}/Training/airflow_apis_with_spark_submit/spark_jobs/spark_read_write_job.py"
 
 print("submitting the job")
 
